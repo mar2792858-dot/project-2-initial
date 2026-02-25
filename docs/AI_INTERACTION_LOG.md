@@ -61,6 +61,31 @@ benefit to returning a hashCode value for these shapes?"
 The first shape class I would like you to create is a Sphere with Properties: radius."
 *
 * Follow-up Prompts (if any):
+* 1. "Can you explain to me the use of muliplication by 100 and division by 100 in this block of code:
+     @Override public double calculateSurfaceArea() { return Math.round((4 * Math.PI * Math.pow(radius, 2)) * 100.0) / 100.0; }"
+* 2. "[Refinement prompt 2]"
+*
+* Manual Modifications:
+* - [List any changes you made to the AI output]
+* - [Explain why changes were necessary]
+*
+* Formula Verification:
+* - Volume formula verified against: [source]
+* - Surface area formula verified against: [source]
+    */
+## Class 2: Cube.java
+
+/**
+* AI GENERATION DOCUMENTATION
+* ===========================
+* AI Tool Used: Claude - Sonnet 4.6
+* Generation Date: 2/25/2026
+*
+* Original Prompt:
+* "Great, lets move onto the Cube class. 
+* Please create this class and include the property sideLength."
+*
+* Follow-up Prompts (if any):
 * 1. "[Refinement prompt 1]"
 * 2. "[Refinement prompt 2]"
 *
@@ -72,4 +97,3 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - Volume formula verified against: [source]
 * - Surface area formula verified against: [source]
     */
-## Class 2
