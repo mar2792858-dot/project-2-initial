@@ -164,3 +164,36 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - Volume formula verified against: [https://www.wolframalpha.com/input?i2d=true&i=torus]
 * - Surface area formula verified against: [https://www.wolframalpha.com/input?i2d=true&i=torus]
     */
+
+
+For the testing classes, I started with creating the SphereTest class using this prompt:
+
+"Okay, thank you. I am moving onto the next phase, developing a test suite. The instructions are as follows:
+For each shape class, generate JUnit 5 test classes that include:
+Test Categories:
+* Basic Functionality: Constructor, getters, setters
+* Calculation Accuracy: Volume and surface area with known values
+* Boundary Testing: Zero values, very small/large numbers
+* Input Validation: Negative values, null inputs
+* Inheritance Testing: Polymorphic behavior verification
+
+Here is an example for test scenarios for Sphere:
+// Test with known mathematical results
+@Test void sphereVolumeCalculation() {
+// Volume of sphere with radius 3 should be 4/3 * π * 3³ = 113.097...
+}
+// Test boundary conditions
+@Test void sphereWithZeroRadius() {
+// What should happen? Document your decision.
+}
+// Test polymorphism
+@Test void sphereAsShape3D() {
+// Verify it works when treated as Shape3D reference
+}
+
+
+You can start by creating a class for the sphere named SphereTest"
+
+I then used Github copilot to debug this test class, and then create similar test classes for the other shapes. 
+I did not document the prompts for the other test classes, 
+but they were similar to the one above, just replacing the shape.
