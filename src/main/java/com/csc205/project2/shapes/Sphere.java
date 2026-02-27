@@ -14,23 +14,41 @@ package com.csc205.project2.shapes;
 public class Sphere extends Shape3D {
 
     /** The radius of the sphere. Must be greater than zero. */
-    private final double radius;
+    // made non-final so the radius can be changed via setRadius()
+    private double radius;
+
+    /**
+     * Convenience constructor that defaults radius to 1.0.
+     *
+     * @param name  the name of the sphere
+     * @param color the color of the sphere
+     */
+    public Sphere(String name, String color) {
+        this(name, color, 1.0);
+    }
 
     /**
      * Constructs a new Sphere with the specified name, color, and radius.
      *
      * @param name   the name of the sphere; must not be null or blank
      * @param color  the color of the sphere; must not be null or blank
-     * @param radius the radius of the sphere; must be greater than zero
+     * @param radius the radius of the sphere; must be greater than zero and finite
      * @throws IllegalArgumentException if name or color is null/blank,
-     *                                  or if radius is not positive
+     *                                  or if radius is not positive/finite
      */
     public Sphere(String name, String color, double radius) {
         super(name, color);
-        if (radius <= 0) {
-            throw new IllegalArgumentException("Radius must be greater than zero. Provided: " + radius);
-        }
+        validateRadius(radius);
         this.radius = radius;
+    }
+
+    /**
+     * Validates a radius value without mutating state.
+     */
+    private static void validateRadius(double r) {
+        if (!Double.isFinite(r) || r <= 0.0) {
+            throw new IllegalArgumentException("Radius must be a finite number greater than zero. Provided: " + r);
+        }
     }
 
     /**
@@ -40,6 +58,18 @@ public class Sphere extends Shape3D {
      */
     public double getRadius() {
         return radius;
+    }
+
+    /**
+     * Sets the radius of this sphere after validating the input.
+     * Strong exception guarantee: state is unchanged on failure.
+     *
+     * @param newRadius the new radius; must be finite and greater than zero
+     * @throws IllegalArgumentException if newRadius is not finite or <= 0
+     */
+    public void setRadius(double newRadius) {
+        validateRadius(newRadius);
+        this.radius = newRadius;
     }
 
     /**
@@ -56,36 +86,30 @@ public class Sphere extends Shape3D {
      * Calculates and returns the volume of this sphere.
      * Uses the formula: V = (4/3) * π * r³
      *
-     * @return the volume of the sphere, rounded to two decimal places
+     * @return the volume of the sphere (full double precision)
      */
     @Override
     public double calculateVolume() {
-        return Math.round(((4.0 / 3.0) * Math.PI * Math.pow(radius, 3)) * 100.0) / 100.0;
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
     }
 
     /**
      * Calculates and returns the surface area of this sphere.
      * Uses the formula: SA = 4 * π * r²
      *
-     * @return the surface area of the sphere, rounded to two decimal places
+     * @return the surface area of the sphere (full double precision)
      */
     @Override
     public double calculateSurfaceArea() {
-        return Math.round((4 * Math.PI * Math.pow(radius, 2)) * 100.0) / 100.0;
+        return 4 * Math.PI * Math.pow(radius, 2);
     }
 
     /**
-     * Returns a formatted string representation of this Sphere,
-     * including its name, color, radius, volume, and surface area.
-     *
-     * @return a string representation of the sphere
+     * Delegate to superclass formatting to preserve units and multi-line layout.
      */
     @Override
     public String toString() {
-        return String.format(
-                "Sphere { name='%s', color='%s', radius=%.2f, volume=%.2f, surfaceArea=%.2f }",
-                getName(), getColor(), radius, calculateVolume(), calculateSurfaceArea()
-        );
+        return super.toString();
     }
 
     /**
