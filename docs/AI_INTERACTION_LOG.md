@@ -70,8 +70,8 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - [Explain why changes were necessary]
 *
 * Formula Verification:
-* - Volume formula verified against: [source]
-* - Surface area formula verified against: [source]
+* - Volume formula verified against: https://www.wolframalpha.com/input?i=sphere
+* - Surface area formula verified against: https://www.wolframalpha.com/input?i=sphere
     */
 ## Class 2: Cube.java
 
@@ -94,10 +94,11 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - [Explain why changes were necessary]
 *
 * Formula Verification:
-* - Volume formula verified against: [source]
-* - Surface area formula verified against: [source]
+* - Volume formula verified against: https://www.wolframalpha.com/input?i=what+is+the+formula+for+surface+area+and+volume+of+a+cube
+* - Surface area formula verified against: https://www.wolframalpha.com/input?i=what+is+the+formula+for+surface+area+and+volume+of+a+cube
     */
 
+# Class 3: Cylinder
 /**
 * AI GENERATION DOCUMENTATION
 * ===========================
@@ -116,10 +117,11 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - [Explain why changes were necessary]
 *
 * Formula Verification:
-* - Volume formula verified against: [source]
-* - Surface area formula verified against: [source]
+* - Volume formula verified against: https://www.wolframalpha.com/input?i=cylinder
+* - Surface area formula verified against: https://www.wolframalpha.com/input?i=cylinder
     */
 
+# Class 4: RectangularPrism
 * AI GENERATION DOCUMENTATION
 * ===========================
 * AI Tool Used: Claude - Sonnet 4.6
@@ -137,6 +139,28 @@ The first shape class I would like you to create is a Sphere with Properties: ra
 * - [Explain why changes were necessary]
 *
 * Formula Verification:
-* - Volume formula verified against: [source]
-* - Surface area formula verified against: [source]
+* - Volume formula verified against: https://www.wolframalpha.com/input?i2d=true&i=rectangular+prism
+* - Surface area formula verified against: https://www.wolframalpha.com/input?i=2+%28h+w+%2B+d+%28h+%2B+w%29%29&assumption=%22ClashPrefs%22+-%3E+%7B%22Math%22%7D
+    */
+
+# Class 5: Torus
+* AI GENERATION DOCUMENTATION
+* ===========================
+* AI Tool Used: Claude - Sonnet 4.6
+* Generation Date: 2/26/2026
+*
+* Original Prompt:
+* "Great. The last shape class that will extend Shape3D is Torus and it needs innerRadius and outerRadius properties please."
+*
+* Follow-up Prompts (if any):
+* 1. "[Refinement prompt 1]"
+* 2. "[Refinement prompt 2]"
+*
+* Manual Modifications:
+* - [List any changes you made to the AI output]
+* - [Explain why changes were necessary]
+*
+* Formula Verification:
+* - Volume formula verified against: [https://www.wolframalpha.com/input?i2d=true&i=torus]
+* - Surface area formula verified against: [https://www.wolframalpha.com/input?i2d=true&i=torus]
     */
